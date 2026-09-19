@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <rect width="1200" height="620" fill="#f6f3ed"/>
+  <text x="600" y="60" text-anchor="middle" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="34" font-weight="700" fill="#123c69">Как модель учится</text>
+  <g font-family="Avenir Next, Helvetica Neue, sans-serif" text-anchor="middle">
+    <circle cx="600" cy="160" r="83" fill="#d9edf7" stroke="#247ba0" stroke-width="5"/>
+    <text x="600" y="152" font-size="26" font-weight="700" fill="#123c69">ДАННЫЕ</text><text x="600" y="188" font-size="19" fill="#17202a">признаки + ответы</text>
+    <circle cx="925" cy="330" r="83" fill="#fff0c9" stroke="#e0a11a" stroke-width="5"/>
+    <text x="925" y="322" font-size="26" font-weight="700" fill="#8a5a00">МОДЕЛЬ</text><text x="925" y="358" font-size="19" fill="#17202a">ищет закономерность</text>
+    <circle cx="600" cy="500" r="83" fill="#f8deda" stroke="#c65332" stroke-width="5"/>
+    <text x="600" y="492" font-size="26" font-weight="700" fill="#8d2d1b">ОШИБКА</text><text x="600" y="528" font-size="19" fill="#17202a">сравнение с ответом</text>
+    <circle cx="275" cy="330" r="83" fill="#dff3df" stroke="#4a9b54" stroke-width="5"/>
+    <text x="275" y="322" font-size="26" font-weight="700" fill="#27632d">ОБНОВЛЕНИЕ</text><text x="275" y="358" font-size="19" fill="#17202a">меняем параметры</text>
+  </g>
+  <g fill="none" stroke="#59636e" stroke-width="7" stroke-linecap="round">
+    <path d="M670 190 C780 205 850 230 880 270"/><path d="M880 390 C820 440 760 465 675 485"/><path d="M525 485 C440 465 380 440 320 390"/><path d="M320 270 C380 220 440 195 525 180"/>
+  </g>
+  <g fill="#59636e"><path d="M880 270 l-25 -5 13 24 z"/><path d="M675 485 l17 -19 8 25 z"/><path d="M320 390 l25 5 -13 -24 z"/><path d="M525 180 l-17 19 -8 -25 z"/></g>
+</svg>

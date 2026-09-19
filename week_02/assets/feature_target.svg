@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="#f6f3ed"/>
+  <text x="600" y="60" text-anchor="middle" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="34" font-weight="700" fill="#123c69">Данные для обучения модели</text>
+  <g font-family="Avenir Next, Helvetica Neue, sans-serif" text-anchor="middle">
+    <rect x="90" y="145" width="650" height="230" rx="14" fill="#ffffff" stroke="#247ba0" stroke-width="4"/>
+    <line x1="90" y1="205" x2="740" y2="205" stroke="#247ba0" stroke-width="3"/>
+    <line x1="250" y1="145" x2="250" y2="375" stroke="#247ba0" stroke-width="3"/><line x1="410" y1="145" x2="410" y2="375" stroke="#247ba0" stroke-width="3"/><line x1="570" y1="145" x2="570" y2="375" stroke="#247ba0" stroke-width="3"/>
+    <text x="170" y="185" font-size="24" font-weight="700" fill="#123c69">час</text><text x="330" y="185" font-size="24" font-weight="700" fill="#123c69">темп.</text><text x="490" y="185" font-size="24" font-weight="700" fill="#123c69">дождь</text><text x="655" y="185" font-size="24" font-weight="700" fill="#8d2d1b">target</text>
+    <text x="170" y="250" font-size="24" fill="#17202a">08:00</text><text x="330" y="250" font-size="24" fill="#17202a">12</text><text x="490" y="250" font-size="24" fill="#17202a">нет</text><text x="655" y="250" font-size="24" fill="#8d2d1b">нет</text>
+    <text x="170" y="315" font-size="24" fill="#17202a">18:00</text><text x="330" y="315" font-size="24" fill="#17202a">8</text><text x="490" y="315" font-size="24" fill="#17202a">да</text><text x="655" y="315" font-size="24" fill="#8d2d1b">да</text>
+    <rect x="820" y="170" width="285" height="180" rx="16" fill="#fff0c9" stroke="#e0a11a" stroke-width="5"/>
+    <text x="962" y="235" font-size="29" font-weight="700" fill="#8a5a00">ПРИЗНАКИ</text><text x="962" y="275" font-size="21" fill="#17202a">что известно</text><text x="962" y="310" font-size="29" font-weight="700" fill="#8d2d1b">TARGET</text><text x="962" y="340" font-size="21" fill="#17202a">что предсказываем</text>
+  </g>
+</svg>

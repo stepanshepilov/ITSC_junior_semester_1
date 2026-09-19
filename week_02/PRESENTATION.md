@@ -9,22 +9,25 @@ color: "#17202a"
 style: |
   section {
     font-family: "Avenir Next", "Helvetica Neue", sans-serif;
-    padding: 54px 70px;
+    padding: 42px 64px;
     letter-spacing: 0;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   h1, h2 { color: #123c69; }
-  h1 { font-size: 2.05em; }
-  h2 { font-size: 1.55em; }
-  p, li { font-size: 0.88em; line-height: 1.35; }
+    h1 { font-size: 1.95em; margin-bottom: 0.35em; }
+    h2 { font-size: 1.45em; }
+    p, li { font-size: 0.82em; line-height: 1.28; }
   code { color: #a33b20; }
-  pre { background: #18232f; color: #f5f1e8; border-radius: 10px; padding: 18px; }
-  img[alt~="hero"] { width: 100%; height: 390px; object-fit: cover; border-radius: 12px; }
-  img[alt~="small"] { width: 38%; height: 210px; object-fit: cover; border-radius: 10px; float: right; margin-left: 28px; }
+    pre { background: #18232f; color: #f5f1e8; border-radius: 10px; padding: 14px 18px; font-size: 0.72em; line-height: 1.25; }
+    img[alt~="diagram"] { display: block; width: 88%; max-height: 390px; object-fit: contain; margin: 12px auto 20px; }
+    img[alt~="title-art"] { display: block; width: 72%; max-height: 260px; object-fit: contain; margin: 8px auto 18px; }
+    .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+    .panel { background: #ffffff; border-left: 6px solid #247ba0; padding: 12px 18px; border-radius: 8px; }
   .tag { color: #c65332; font-weight: 700; }
   .small { font-size: 0.62em; color: #59636e; }
----
 
-![hero](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80)
+![title-art](assets/program_pipeline.svg)
 
 # Первый шаг в машинное обучение
 
@@ -38,7 +41,7 @@ style: |
 
 # Что будет к концу семестра
 
-![small](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80)
+![diagram](assets/ml_learning_loop.svg)
 
 - писать небольшие программы на Python;
 - понимать данные, признаки и target;
@@ -65,7 +68,7 @@ style: |
 
 # Любая программа — это pipeline
 
-![small](https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=900&q=80)
+![diagram](assets/program_pipeline.svg)
 
 ```text
 входные данные  ->  преобразование  ->  результат
@@ -213,7 +216,7 @@ else:
 
 # Ошибка — это сообщение о гипотезе
 
-![small](https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80)
+![diagram](assets/debugging_map.svg)
 
 ### Три частых вида
 
@@ -230,29 +233,158 @@ else:
 
 ---
 
-# Что общего с машинным обучением?
+ # Что такое машинное обучение?
 
-![small](https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=900&q=80)
+ Машинное обучение — способ находить закономерность в примерах и использовать ее для новых данных.
 
-Сегодня мы вручную задаем правило:
+ ```text
+ примеры с ответами -> алгоритм обучения -> модель
+ новые признаки     -> модель           -> предсказание
+ ```
 
-```text
-если observations >= 10, то «достаточно»
-```
+ В обычной программе правило пишем мы. В ML правило подбирается по данным, но проверять его все равно должны мы.
 
-В машинном обучении мы дадим алгоритму примеры:
+ ![diagram](assets/ml_learning_loop.svg)
 
-```text
-признаки -> правильный ответ
-```
+ <div class="tag">Модель не «понимает» задачу сама: она оптимизирует выбранный нами критерий.</div>
 
-И модель попробует найти правило сама.
+ ---
 
-Но pipeline остается тем же:
+ # Пример: признаки и target
 
-```text
-вход -> обработка -> выход -> проверка
-```
+ Представим задачу: предсказать, будет ли дождь.
+
+ ![diagram](assets/feature_target.svg)
+
+ - **Признаки (`X`)** — то, что известно до предсказания.
+ - **Target (`y`)** — правильный ответ, который хотим предсказать.
+ - Одна строка — один объект или один момент наблюдения.
+
+ Если target случайно попадет в признаки, модель получит подсказку и оценка станет нечестной.
+
+ ---
+
+ # Два режима обучения
+
+ <div class="columns">
+ <div class="panel">
+
+ ### С учителем
+
+ У каждого примера есть ответ `y`.
+
+ ```text
+ X = [температура, давление]
+ y = дождь / нет
+ ```
+
+ Задачи: классификация и регрессия.
+
+ </div>
+ <div class="panel">
+
+ ### Без учителя
+
+ Ответов нет — ищем структуру.
+
+ ```text
+ X = [рост, вес, возраст]
+ y = отсутствует
+ ```
+
+ Задача: например, кластеризация.
+
+ </div>
+ </div>
+
+ Сегодня достаточно запомнить: тип задачи определяется тем, есть ли правильные ответы.
+
+ ---
+
+ # Как модель ошибается
+
+ Модель строит предсказание `y_hat` и сравнивает его с правильным ответом `y`.
+
+ ```python
+ y_true = [1, 0, 1, 1]
+ y_pred = [1, 1, 1, 0]
+
+ mistakes = sum(
+     true != predicted
+     for true, predicted in zip(y_true, y_pred)
+ )
+ accuracy = 1 - mistakes / len(y_true)
+ print(accuracy)  # 0.5
+ ```
+
+ `accuracy` — доля правильных ответов. Метрика не является «оценкой интеллекта» модели: она зависит от задачи и набора данных.
+
+ ---
+
+ # Baseline: сначала простое правило
+
+ До сложной модели нужен ориентир.
+
+ ```python
+ def majority_class(labels):
+     counts = {}
+     for label in labels:
+         counts[label] = counts.get(label, 0) + 1
+     return max(counts, key=counts.get)
+
+ train_labels = ["yes", "no", "yes", "yes"]
+ baseline = majority_class(train_labels)
+ print(baseline)  # yes
+ ```
+
+ Если сложная модель не лучше baseline на новых данных, сложность не оправдана.
+
+ ---
+
+ # Train и test: честная проверка
+
+ ```python
+ from random import Random
+
+ data = list(range(10))
+ Random(42).shuffle(data)
+
+ split = int(len(data) * 0.8)
+ train = data[:split]
+ test = data[split:]
+
+ print(train)
+ print(test)
+ ```
+
+ - `train` — примеры, по которым модель учится;
+ - `test` — новые примеры для финальной проверки.
+
+ Нельзя подбирать решение, разглядывая test снова и снова.
+
+ ---
+
+ # От правила к обучаемому правилу
+
+ Ручное правило:
+
+ ```python
+ if observations >= 10:
+     result = "enough"
+ ```
+
+ Упрощенная обучаемая модель:
+
+ ```python
+ def predict(observations, threshold):
+     return observations >= threshold
+
+ for threshold in [5, 10, 15]:
+     predictions = [predict(value, threshold) for value in [3, 12, 20]]
+     print(threshold, predictions)
+ ```
+
+ В ML алгоритм может подобрать `threshold` по примерам. Но выбор метрики и проверка качества остаются нашей ответственностью.
 
 ---
 

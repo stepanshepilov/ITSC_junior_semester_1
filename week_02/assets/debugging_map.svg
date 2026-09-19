@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540">
+  <rect width="1200" height="540" fill="#f6f3ed"/>
+  <text x="600" y="62" text-anchor="middle" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="34" font-weight="700" fill="#123c69">Отладка как исследование</text>
+  <g font-family="Avenir Next, Helvetica Neue, sans-serif" text-anchor="middle">
+    <rect x="55" y="190" width="220" height="130" rx="16" fill="#f8deda" stroke="#c65332" stroke-width="5"/><text x="165" y="245" font-size="25" font-weight="700" fill="#8d2d1b">СИМПТОМ</text><text x="165" y="280" font-size="19" fill="#17202a">что произошло?</text>
+    <rect x="345" y="190" width="220" height="130" rx="16" fill="#d9edf7" stroke="#247ba0" stroke-width="5"/><text x="455" y="245" font-size="25" font-weight="700" fill="#123c69">TRACEBACK</text><text x="455" y="280" font-size="19" fill="#17202a">где упало?</text>
+    <rect x="635" y="190" width="220" height="130" rx="16" fill="#fff0c9" stroke="#e0a11a" stroke-width="5"/><text x="745" y="245" font-size="25" font-weight="700" fill="#8a5a00">ГИПОТЕЗА</text><text x="745" y="280" font-size="19" fill="#17202a">почему?</text>
+    <rect x="925" y="190" width="220" height="130" rx="16" fill="#dff3df" stroke="#4a9b54" stroke-width="5"/><text x="1035" y="245" font-size="25" font-weight="700" fill="#27632d">ПРОВЕРКА</text><text x="1035" y="280" font-size="19" fill="#17202a">одно изменение</text>
+  </g>
+  <g fill="none" stroke="#59636e" stroke-width="7"><path d="M280 255 H330"/><path d="M570 255 H620"/><path d="M860 255 H910"/></g>
+  <g fill="#59636e"><path d="M330 255 l-20 -13 v26 z"/><path d="M620 255 l-20 -13 v26 z"/><path d="M910 255 l-20 -13 v26 z"/></g>
+  <text x="600" y="425" text-anchor="middle" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="25" fill="#59636e">Ошибка — не провал, а дополнительное наблюдение о программе.</text>
+</svg>
